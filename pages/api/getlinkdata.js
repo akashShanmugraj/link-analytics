@@ -1,6 +1,5 @@
 // pages/api/someRoute.js
 import dbConnect from "../../utils/dbConnect";
-import geoip from "geoip-lite";
 
 export default async function handler(req, res) {
   const { db, client } = await dbConnect();
@@ -11,12 +10,6 @@ export default async function handler(req, res) {
   // Perform a search query
   const searchQuery = { linkprefix: req.query.prefix }; // Replace with your actual search query
   const searchResults = await linksCollection.find(searchQuery).toArray();
-
-  const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
-  const geo = geoip.lookup(ip);
-
-  console.log("IP: " + ip);
-  console.log("GEO: " + geo);
 
   console.log("Incrementing clickcount for " + req.query.prefix);
   // Update the documents in the collection
