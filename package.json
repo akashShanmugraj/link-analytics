@@ -1,5 +1,5 @@
 {
-  "name": "link-analytics",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.301.0",
+    "mongodb": "^6.3.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",

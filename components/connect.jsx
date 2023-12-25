@@ -5,7 +5,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
-export function landing() {
+export function connect() {
   return (
     (<div key="1" className="flex flex-col min-h-screen bg-black text-white">
       <header
