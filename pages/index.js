@@ -113,7 +113,7 @@ export default function Component() {
       <main className="flex-1 flex items-center justify-center bg-black">
         <div className="space-y-6 text-left">
           <h1 className="text-4xl font-bold text-white">Create a Link Tracker</h1>
-          <h3 className="text-lg font-light text-white">🤫 dont tell anyone about this</h3>
+            <h3 className="text-lg font-light text-gray-400"><i>and dont tell anyone about this </i>🤫</h3>
           <label className="block text-gray-300 md:text-lg">
             Display Name (eg. Akash's LinkedIn)
             <input
