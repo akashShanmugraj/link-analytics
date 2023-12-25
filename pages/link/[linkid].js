@@ -19,7 +19,7 @@ const MyLink = () => { // Rename your component to MyLink
             setApidata(data[0]) // set the state variable
             setTimeout(() => {
               window.location.href = data[0].redirectlink;
-            }, 3000); // Redirect after 2 seconds
+            }, 2000); // Redirect after 2 seconds
           } else {
             console.error('No data returned from API')
           }
