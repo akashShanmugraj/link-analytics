@@ -12,10 +12,14 @@ export default async function handler(req, res) {
   const searchResults = await linksCollection.find(searchQuery).toArray();
 
   console.log("Incrementing clickcount for " + req.query.prefix);
+  console.log("TAG IS: "+req.query.tag)
   // Update the documents in the collection
   await linksCollection.updateMany(searchQuery, {
-    $inc: { clickcount: 1 },
-    $push: { timestamps: new Date() },
+    $inc: { 
+      clickcount: 1,
+      [req.query.tag]: 1 
+    },
+    $push: { timestamps: new Date() }
   });
 
   // use searchResults for further processing

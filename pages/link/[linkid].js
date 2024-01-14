@@ -5,13 +5,17 @@ import NextLink from "next/link" // Rename imported Link to NextLink
 
 const MyLink = () => { // Rename your component to MyLink
   const router = useRouter()
-  const { linkid } = router.query
+  const { linkid,tag } = router.query
+
+  // console.log("TAG: "+ tag)
+  // console.log("LINKID: "+ linkid)
+
   var [apidata, setApidata] = useState(null); // initialize with null
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/api/getlinkdata/?prefix=${linkid}`)
+        const response = await fetch(`/api/getlinkdata/?prefix=${linkid}&tag=${tag}`)
         if (response.ok) {
           const data = await response.json()
           // console.log(data)
