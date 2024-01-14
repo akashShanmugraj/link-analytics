@@ -17,9 +17,10 @@ export default async function handler(req, res) {
   await linksCollection.updateMany(searchQuery, {
     $inc: { 
       clickcount: 1,
-      [req.query.tag]: 1 
+      [req.query.tag+"-count"]: 1 
     },
-    $push: { timestamps: new Date() }
+    $push: { 
+      [req.query.tag+"-timestamps"]: new Date() }
   });
 
   // use searchResults for further processing
